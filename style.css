@@ -1,0 +1,296 @@
+/*Reset CSS*/
+html, body, div, span,
+h1, h2, h3,h4,p, a,ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style:none;
+}
+.clearfix{
+    content: "";
+    display: block;
+    clear: both;
+}
+*{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    letter-spacing: 0.05em;
+    box-sizing: border-box;  
+}
+
+/*共通css*/
+.container{
+    max-width:1024px;
+    width:90%;
+    margin:0px auto;
+}
+
+/*JS animation*/
+@keyframes shake
+{
+  from{
+    transform: translateX(-5px);
+  }
+  
+  50%{
+    transform: translateX(10px);
+  }
+  
+  to{
+    transform: translateX(-5px);
+  }
+}
+
+/*header*/
+header{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-position:center;
+    color:white;
+    height:98px;
+    position: fixed;
+    z-index: 9;
+}
+.hd-container{
+    display: flex;
+    justify-content: space-between;
+    height:98px;
+}
+.header-left{
+    margin-left:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.header-left h1{
+    float:left;
+    font-size:35px;
+    line-height: 50px;
+    
+}
+.header-left a{
+    color:white;
+}
+.header-right a{
+    color:white;
+}
+.header-right li{
+    float:left;
+    font-size:20px;
+    margin-top:30px;
+    margin-bottom:30px;
+    margin-right:20px;
+
+}
+.header-right ul{
+    float:left;
+}
+
+.header-right li:hover
+{
+  animation-name: shake;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+    
+}
+
+/*top-wrapper*/
+.top-wrapper{
+    width:100%;
+    background-image:url(image/ufo.jpg);
+    height:80vh;
+    background-size: cover;
+    background-position:center;
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten;
+}
+.top{
+    text-align:center;
+    font-weight:bold;
+}
+.top-wrapper h1{
+    opacity:0.8;
+    font-size:50px;
+    padding-top:250px;
+    line-height:45px;
+}
+.top-wrapper  p{
+    font-size:15px;
+}
+.top-wrapper span{
+    display: block;
+}
+.sub-main{
+    margin-top:10px;
+}
+
+
+/*profile-wrapper*/
+.container h2{
+    font-size:30px;
+    text-align: center;
+    border-bottom:2px solid rgb(163, 163, 163);
+    padding-top:100px;
+    padding-top:-100px;
+}
+.profile-items{
+    display: flex;
+    margin-top:40px;
+}
+.item{
+    width:25%;
+    text-align: center;
+    border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+    border:1px solid black;
+}
+.item-icon{
+    padding-top:20px;
+    width:90%;
+    height:auto;
+    margin:0px auto;
+    vertical-align: bottom;
+}
+.item h4{
+    font-size:20px;
+    font-weight: bold;
+    display:block;
+    background-color: rgba(0, 0, 0, 0.8);
+    width:90%;
+    margin:0px auto;
+    color:white;
+}
+.item-detail{
+    height:70px;
+    width:90%;
+    margin:0px auto;
+    font-weight:bold;
+}
+
+/*reason-wrapper*/
+.reason-items p{
+    max-width:600px;
+    margin:0px auto;
+}
+.reason-items{
+    margin-top:40px;
+    margin-bottom:80px;
+}
+.brain-icon{
+    width:500px;
+    margin-top:20px;
+}
+.brain-image{
+    text-align: center;
+    opacity: 0.5;
+}
+
+/*footer*/
+footer{
+    height:150px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+footer p{
+    font-size:20px;
+    color:white;
+    text-align: center;
+    padding-top:20px
+}
+.socialEffect__link {
+    margin: .3em;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #bfbfbf;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform ease-out 0.2s;
+}
+.socialEffect__box li {
+    display: inline-block;
+}
+.footer-right{
+    float:right;
+}
+
+/* 共通のアイコンエフェクト */
+.socialEffect__link {
+    margin: .3em;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #bfbfbf;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform ease-out 0.2s;
+}
+  
+  .socialEffect__box li {
+    display: inline-block;
+}
+  
+  
+  /* インスタ用アイコン設定 */
+.icon-instagram::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+}
+.fab.fa-instagram {
+    display: inline-block;
+    color: #fff;
+}
+.icon-instagram:hover {
+    background: radial-gradient(
+        circle farthest-corner at 32% 106%,
+        rgb(255, 225, 125) 0%,
+        rgb(255, 205, 105) 10%,
+        rgb(250, 145, 55) 28%,
+        rgb(235, 65, 65) 42%,
+        transparent 82%
+      ),
+      linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    transform: scale(0.9);
+}
+  
+/* フェイスブック用アイコン設定 */
+.icon-facebook::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+}
+.fab.fa-facebook-f {
+    display: inline-block;
+    color: #fff;
+}
+.icon-facebook:hover {
+    background: #3b5998;
+    transform: scale(0.9);
+}
