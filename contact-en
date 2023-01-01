@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head lang="ja">
+    <meta charset="utf-8" />
+    <title>Nanako Introduction</title>
+    <link rel="icon" href="/image/icon.jpg" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="hd-container">
+          <div class="header-left clearfix">
+            <h1 class="clearfix"><a href="https://shinko1929.github.io/sample/index.html">Who is Nanako?</a></h1>
+          </div>
+          <div class="header-right clearfix">
+              <ul class="menu clearfix">
+                <li><a href="https://shinko1929.github.io/sample/index-en.html#self-title">Who is Nankao?</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="https://shinko1929.github.io/sample/contact-en.html">Contact</a></li>
+                <li><a href="https://shinko1929.github.io/sample/index.html">Japanese</a></li>
+              </ul>
+          </div>
+        </div>
+    </header>
+
+    <form action="">
+        <div class="container contact-container">
+            <h2>Contact</h2>
+            <p class="caution">*We will reply within 3 business days.</p>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <p><span>*</span>Name</p>
+                    <input type="text">
+                </div>
+
+                <div class="contact-item">
+                    <p><span>*</span>Email</p>
+                    <input type="text">
+                </div>
+
+                <div class="contact-item">
+                    <p><span>*</span>Inquiry details</p>
+                    <textarea name="" id="" cols="50" rows="5"></textarea>
+                </div>
+
+                <input class="btn" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <p>Nanako.inc</p>
+        <div class="footer-right">
+            <ul class="socialEffect__box">
+                <li>
+                  <a class="socialEffect__link icon-instagram" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a class="socialEffect__link icon-facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+              </ul>
+
+        </div>
+    </footer>
+
+</body>
+</html>
