@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>WORK26</title>
+</head>
+<body>
+    <div class="container">
+        <div id="timer">
+            <div id="time">00:00.00</div>
+            <div id="button">
+                <input type="button" value="Start" id="start">
+                <input type="button" value="Stop" id="stop" disabled="true">
+                <input type="button" value="Reset" id="reset" disabled="true">
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            background-color:rgb(38, 255, 9);
+            max-width:402px;
+            height:242px;
+            margin:50px auto;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            color:white;
+        }
+        #timer{
+            top:70px;
+            left:50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width:90%
+        }
+        #time{
+            background-color: black;
+            border-radius: 10px;
+            font-size:50px;
+            width:80%;
+            margin: 0px auto;
+        }
+        #start, #stop, #reset{
+            background-color: black;
+            color:white;
+            width:80px;
+            border-radius: 10px;
+            line-height: 40px;
+            font-size:20px;
+            margin-top:10px;
+            opacity: 1;
+            border: none;
+
+        }
+        #stop, #reset{
+            opacity: 0.5;
+        }
+
+    </style>
+    <script>
+        const time = document.getElementById('time')
+        const StartButton = document.getElementById('start');
+        const StopButton = document.getElementById('stop');
+        const ResetButton = document.getElementById('reset');
+        
+
+        let startTime;//開始時間
+        let stopTime = 0;//時間を止めた時の時間
+        let timerJudge;//スタート・ストップ制御用
+
+        //時間計算関数
+        function TimeAdjust(){
+            const i = new Date(Date.now() - startTime + stopTime);//時間0設定+止めた時の時間
+            const m = i.getMinutes().toString().padStart(2,'0');
+            const s = i.getSeconds().toString().padStart(2,'0');
+            const ms = i.getMilliseconds().toString().padStart(2,'0');
+            time.textContent = (`${m}:${s}.${ms.slice(0,2)}`);
+            console.log(ms.slice(0,2));
+            timerJudge = setTimeout(TimeAdjust,10);//繰り返し
+        }
+
+        //スタートボタンが押された時の動作
+        function click_StartButton(){
+            //alert('Startボタンがクリックされました');
+            startTime = Date.now();
+            StartButton.disabled = true;
+            StopButton.disabled = false;
+            ResetButton.disabled = true;
+            StartButton.style.opacity = 0.5;
+            StopButton.style.opacity = 1;
+            ResetButton.style.opacity = 0.5;
+            TimeAdjust();
+        }
+
+        //ストップボタンが押された時の動作
+        function click_StopButton(){
+            //alert('Stopボタンがクリックされました');
+            clearTimeout(timerJudge);
+            stopTime += (Date.now() - startTime);
+            StartButton.disabled = false;
+            StopButton.disabled = true;
+            ResetButton.disabled = false;
+            StartButton.style.opacity = 1;
+            StopButton.style.opacity = 0.5;
+            ResetButton.style.opacity = 1;
+        }
+
+        //リセットボタンが押された時の動作
+        function click_ResetButton(){
+            //alert('Resetボタンが押されました');
+            time.textContent = "00:00.00";
+            clearInterval(timerJudge);
+            ResetButton.disabled = true;
+            StopButton.disabled = true;
+            ResetButton.style.opacity = 0.5;
+            StopButton.style.opacity = 0.5;
+            startTime = Date.now();
+            stopTime = 0;
+        }
+
+        StartButton.addEventListener('click',click_StartButton);
+        StopButton.addEventListener('click',click_StopButton);
+        ResetButton.addEventListener('click',click_ResetButton);
+        
+
+
+    </script>
+</body>
+</html>
